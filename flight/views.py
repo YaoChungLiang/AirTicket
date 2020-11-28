@@ -2,8 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
 
+
+
 def sample(req):
-    return HttpResponse('Let"s travel!')
+    obj = {'Age': 18, 'City': 'New Jersey', 'Name': 'Debo'}
+    return render(req, "sample.html", context=obj)
+    # Transfer to template and object passing
+    # return HttpResponse('Let"s travel!')
 
 def get_info(req, age):
     return HttpResponse(f'I am {age} years old!')
