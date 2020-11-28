@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from flight import views as fviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('<int:num>/', fviews.even_odd, name='even_odd'),
+    path('', fviews.sample, name='sample'),
+    path('<age>/', fviews.get_info, name='show age'),
 ]
